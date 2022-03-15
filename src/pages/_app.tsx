@@ -5,7 +5,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 
 import createEmotionCache from '@/styles/CreateEmotionCache';
 import theme from '@/styles/GlobalStyles';
@@ -14,14 +13,6 @@ interface IAppProps extends AppProps {
 }
 
 const clientSideEmotionCache = createEmotionCache();
-const options = {
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: 1,
-    },
-  },
-};
 
 const App = ({
   Component,
